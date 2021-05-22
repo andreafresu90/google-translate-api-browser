@@ -6,10 +6,11 @@
   "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cjvnjde/google-translate-api-browser"
+    "url": "https://github.com/andreafresu90/google-translate-api-browser"
   },
   "scripts": {
-    "build": "tsc --declaration"
+    "build": "tsc --declaration",
+    "prepare": "npm run build"
   },
   "keywords": [
     "translate",
