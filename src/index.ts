@@ -120,7 +120,7 @@ export function translate(
 
           const body = JSON.parse(res.body);
 
-          body[0].forEach((obj: any) => {
+          body[0]?.forEach((obj: any) => {
             if (obj[0]) {
               result.text += obj[0];
             } else if (obj[2]) {
@@ -128,12 +128,12 @@ export function translate(
             }
           });
 
-          if (body[2] === body[8][0][0]) {
-            result.from.language.iso = body[2];
-          } else {
-            result.from.language.didYouMean = true;
-            result.from.language.iso = body[8][0][0];
-          }
+          // if (body[2] === body[8][0][0]) {
+          //   result.from.language.iso = body[2];
+          // } else {
+          //   result.from.language.didYouMean = true;
+          //   result.from.language.iso = body[8][0][0];
+          // }
 
           if (body[7] && body[7][0]) {
             let str = body[7][0];
