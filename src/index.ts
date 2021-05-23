@@ -28,6 +28,13 @@ export const setCORS = (CORSURL: string) => {
   CORSService = CORSURL;
   return translate;
 };
+let HTTPService: {get: (url:string) => Promise<any>}  = axios;
+
+// setup your own httpService (like @ionic-native/http/ngx )
+export const setHTTPService = (customHTTPService: {get: (url:string) => Promise<any>}) => {
+  HTTPService = customHTTPService;
+  return translate;
+};
 
 // function translate(text: string, to: string, from: string, tld: string) {
 export function translate(
@@ -88,7 +95,7 @@ export function translate(
       return fullUrl;
     })
     .then(url => {
-      return axios
+      return HTTPService
         .get(CORSService + url)
         .then(res_ => {
           const res = {
