@@ -9,8 +9,7 @@
     "url": "https://github.com/andreafresu90/google-translate-api-browser"
   },
   "scripts": {
-    "build": "tsc --declaration",
-    "prepare": "npm run build"
+    "build": "tsc --declaration"
   },
   "keywords": [
     "translate",
@@ -28,7 +27,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "querystring": "^0.2.0"
   },
   "devDependencies": {
